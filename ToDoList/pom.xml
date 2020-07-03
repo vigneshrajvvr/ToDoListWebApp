@@ -44,6 +44,19 @@
     	<artifactId>spring-security-config</artifactId>
     	<version>${springsecurity.version}</version>
 	</dependency>
+	
+	<!-- support spring ORM and spring transactions-->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-orm</artifactId>
+    	<version>${springframework.version}</version>
+	</dependency>
+    
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    	<version>${springframework.version}</version>
+    </dependency>	
   	
   	<!-- support for servlet, jsp, jstl and junit -->
   	<dependency>
@@ -71,13 +84,6 @@
       <scope>test</scope>
     </dependency>
 
-	<!-- support spring ORM and spring transactions-->
-		<dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-orm</artifactId>
-    	<version>${springframework.version}</version>
-	</dependency>
-    
     <!-- Support hibernate-core, validator -->
 	<dependency>
     	<groupId>org.hibernate</groupId>
