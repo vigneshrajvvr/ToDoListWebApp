@@ -7,7 +7,7 @@
 	<meta charset="ISO-8859-1">
 	<title>Oodo - Login</title>
 	
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Login.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Login.css"/>
 </head>
 <body>
 	
@@ -28,6 +28,8 @@
 		</p>
 		
 	</form:form>
-
+	
+	Context path: "${pageContext.request.contextPath}"
+	
 </body>
 </html>
