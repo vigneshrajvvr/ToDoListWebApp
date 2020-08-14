@@ -1,6 +1,8 @@
 body{
-	background-color: #8BC6EC;
-	font-size: 25px; 
+	background-color: #8EC5FC;
+	background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+	width:100%;
+	height:100%;
 }
 
 

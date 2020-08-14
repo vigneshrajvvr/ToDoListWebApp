@@ -28,8 +28,6 @@
 		</p>
 		
 	</form:form>
-	
-	Context path: "${pageContext.request.contextPath}"
-	
+		
 </body>
 </html>
