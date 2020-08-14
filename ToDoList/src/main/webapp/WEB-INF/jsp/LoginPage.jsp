@@ -11,8 +11,8 @@
 </head>
 <body>
 	
+<div class = "signin">
 	<h3>Sign in</h3>
-
 	<form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="POST">
 	
 		<p>
@@ -28,6 +28,6 @@
 		</p>
 		
 	</form:form>
-		
+</div>	
 </body>
 </html>
