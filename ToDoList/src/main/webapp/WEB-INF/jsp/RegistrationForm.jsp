@@ -5,14 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>oodo</title>
+<title>Sign Up</title>
 </head>
 <body>
-	Home page test!!
-	
-	<form:form action="${pageContext.request.contextPath}/logout" method="POST">
-		<input type="submit" value="Logout">
-	</form:form>
-	
+
+	<form:form action="" method="POST">
+	</form:form>	
+		
 </body>
 </html>
