@@ -10,7 +10,16 @@
 <body>
 
 	<form:form action="" method="POST">
+		<p>	
+			Username: <input type="text" name="username">
+		</p>
+		<p>	
+			Email:<input type="email" name="email">
+		</p>
+		<p>	
+			Password:<input type="text" name="password">
+		</p>
 	</form:form>	
-		
+	Return to signin: <a href="${pageContext.request.contextPath}/showLoginPage">Signin</a>
 </body>
 </html>
