@@ -3,9 +3,6 @@ package com.practice.vvr.user;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@FieldMatch.List({
-		@FieldMatch(first="password", second="matchingPassword", message="The password fields must match")
-	})
 public class UserDetails {
 	
 	@NotNull(message = "Cannot be null")

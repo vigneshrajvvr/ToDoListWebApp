@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form:form action="" method="POST">
+	<form:form action="${pageContext.request.contextPath}/register/showRedirectedHomePage" method="GET">
 		<p>	
 			Username: <input type="text" name="username">
 		</p>
@@ -19,6 +19,11 @@
 		<p>	
 			Password:<input type="text" name="password">
 		</p>
+		
+		<p>
+			<input type="submit" value="SignUp">
+		</p>
+		
 	</form:form>	
 	Return to signin: <a href="${pageContext.request.contextPath}/showLoginPage">Signin</a>
 </body>

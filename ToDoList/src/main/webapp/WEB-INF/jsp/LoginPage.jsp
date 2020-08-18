@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Login.css"/>
 </head>
 <body>
+
+
 	
 <div class = "signin">
 	<h3>Sign in</h3>
@@ -36,6 +38,8 @@
 	<c:if test="${param.logout != null}">
 		You have been logged out
 	</c:if>
+	
+	<p>${registerMessage}</p>
 	
 </div>	
 </body>

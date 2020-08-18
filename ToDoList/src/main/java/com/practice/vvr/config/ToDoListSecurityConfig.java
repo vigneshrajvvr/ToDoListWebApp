@@ -43,14 +43,14 @@ public class ToDoListSecurityConfig extends WebSecurityConfigurerAdapter{
 			.exceptionHandling().accessDeniedPage("/access-denied");
 	}
 	
-	@Bean
-	public DaoAuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
-		auth.setUserDetailsService(userService);
-		auth.setPasswordEncoder(passwordEncoder());
-		return auth;
-	}
-	
+//	@Bean
+//	public DaoAuthenticationProvider authenticationProvider() {
+//		DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+//		auth.setUserDetailsService(userService);
+//		auth.setPasswordEncoder(passwordEncoder());
+//		return auth;
+//	}
+//	
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
