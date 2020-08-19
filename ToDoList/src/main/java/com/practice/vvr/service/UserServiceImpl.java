@@ -3,9 +3,11 @@ package com.practice.vvr.service;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.practice.vvr.dao.UserDao;
 import com.practice.vvr.entity.User;
 import com.practice.vvr.user.UserDetails;
 
@@ -14,6 +16,9 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private UserDao userDao;
 	
 	@Override
 	@Transactional
@@ -25,7 +30,20 @@ public class UserServiceImpl implements UserService{
 		user.setPassword(passwordEncoder.encode(userDetails.getPassword()));
 		user.setEmail(userDetails.getEmail());
 		
+		userDao.save(user);		
 		
+	}
+
+	@Override
+	public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username)
+			throws UsernameNotFoundException {
+		return null;
+	}
+
+	@Override
+	@Transactional
+	public User findUserByemail(String email) {
+		return userDao.findUserByEmail(email);
 	}
 
 }

@@ -9,15 +9,20 @@
 </head>
 <body>
 
-	<form:form action="${pageContext.request.contextPath}/register/showRedirectedHomePage" method="GET">
+	<form:form action="${pageContext.request.contextPath}/register/processRegistrationForm" method="POST"
+			   modelAttribute="userDetails">
 		<p>	
-			Username: <input type="text" name="username">
+			Username: <form:input path="userName"/>
 		</p>
 		<p>	
-			Email:<input type="email" name="email">
+			Email:<form:input path="email"/>
 		</p>
 		<p>	
-			Password:<input type="text" name="password">
+			Password:<form:password path="password"/>
+		</p>
+		
+		<p>	
+			Matching Password:<form:password path="matchingPassword"/>
 		</p>
 		
 		<p>
