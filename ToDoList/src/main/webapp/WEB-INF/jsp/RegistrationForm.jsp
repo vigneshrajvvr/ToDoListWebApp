@@ -12,7 +12,7 @@
 	<form:form action="${pageContext.request.contextPath}/register/processRegistrationForm" method="POST"
 			   modelAttribute="userDetails">
 		<p>	
-			Username: <form:input path="userName"/>
+			Username: <form:input path="username"/>
 		</p>
 		<p>	
 			Email:<form:input path="email"/>
