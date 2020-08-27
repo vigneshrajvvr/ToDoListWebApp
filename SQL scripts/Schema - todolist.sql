@@ -1,3 +1,4 @@
+CREATE DATABASE todolist;
 USE todolist;
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
