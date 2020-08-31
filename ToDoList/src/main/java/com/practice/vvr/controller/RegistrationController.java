@@ -3,13 +3,16 @@ package com.practice.vvr.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.practice.vvr.entity.User;
 import com.practice.vvr.service.UserService;
@@ -21,6 +24,12 @@ public class RegistrationController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}
 	
 	@GetMapping("/showRegistrationForm")
 	public String showRegistrationForm(Model theModel) {
@@ -39,11 +48,16 @@ public class RegistrationController {
 //	}
 	
 	@PostMapping("/processRegistrationForm")
-	public String processRegistartionForm(RedirectAttributes redirectAttributes, 
-										  @Valid @ModelAttribute("userDetails") UserDetails theUserDetails,
+	public String processRegistartionForm(@Valid @ModelAttribute("userDetails") UserDetails theUserDetails,
+										  BindingResult theBindingResult,
 										  Model theModel) {
 		
 		User user = userService.findUserByemail(theUserDetails.getEmail());
+		
+		//form validation
+		if(theBindingResult.hasErrors()) {
+			return "RegistrationForm";
+		}
 		
 		if(user != null) {
 			theModel.addAttribute("userDetails", new UserDetails());

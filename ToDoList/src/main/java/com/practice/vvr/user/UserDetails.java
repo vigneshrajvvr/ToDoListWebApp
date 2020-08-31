@@ -3,6 +3,8 @@ package com.practice.vvr.user;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.practice.vvr.validation.ValidEmail;
+
 public class UserDetails {
 	
 	@NotNull(message = "Cannot be null")
@@ -11,6 +13,7 @@ public class UserDetails {
 	
 	@NotNull(message = "Cannot be null")
 	@Size(min = 1, message = "Cannot be null" )
+	@ValidEmail
 	private String email;
 	
 	@NotNull(message = "Cannot be null")

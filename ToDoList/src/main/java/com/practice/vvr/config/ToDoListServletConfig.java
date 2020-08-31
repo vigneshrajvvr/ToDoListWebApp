@@ -1,6 +1,7 @@
 package com.practice.vvr.config;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -32,6 +33,8 @@ public class ToDoListServletConfig implements WebMvcConfigurer{
 	@Autowired
 	private Environment env;
 	
+	private Logger logger= Logger.getLogger(getClass().getName());
+	
 	//Define a bean for view resolver
 	@Bean
 	public ViewResolver viewResolver() {
@@ -56,6 +59,9 @@ public class ToDoListServletConfig implements WebMvcConfigurer{
 		} catch(Exception ex) {
 			throw new RuntimeException(ex);
 		}
+		
+		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
+		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
 		
 		dataSource.setJdbcUrl(env.getProperty("jdbc.url"));
 		dataSource.setUser("jdbc.user");

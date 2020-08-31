@@ -34,6 +34,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Transactional
 	public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		return null;
