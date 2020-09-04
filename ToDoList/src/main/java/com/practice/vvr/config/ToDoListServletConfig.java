@@ -1,5 +1,6 @@
 package com.practice.vvr.config;
 
+import java.beans.PropertyVetoException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -55,8 +56,8 @@ public class ToDoListServletConfig implements WebMvcConfigurer{
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 		
 		try {
-			dataSource.setDriverClass(env.getProperty("jdbc.driver"));
-		} catch(Exception ex) {
+			dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+		} catch(PropertyVetoException ex) {
 			throw new RuntimeException(ex);
 		}
 		
