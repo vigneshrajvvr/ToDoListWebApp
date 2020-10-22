@@ -14,39 +14,42 @@ public class Task {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="task_id")
-	private int id;
+	private int taskId;
 	
 	@Column(name="task_title")
-	private String title;
+	private String taskTitle;
 	
 	@Column(name="task_description")
 	private String taskDescription;
 	
 	@Column(name="date_time_added")
 	private String dateTimeAdded;
+	
+	@Column(name="task_enabled")
+	private int taskEnabled;
 
-	public Task(int id, String title, String taskDescription, String dateTimeAdded) {
+	public Task(int taskId, String taskTitle, String taskDescription, String dateTimeAdded) {
 		super();
-		this.id = id;
-		this.title = title;
+		this.taskId = taskId;
+		this.taskTitle = taskTitle;
 		this.taskDescription = taskDescription;
 		this.dateTimeAdded = dateTimeAdded;
 	}
 
 	public int getId() {
-		return id;
+		return taskId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int taskId) {
+		this.taskId = taskId;
 	}
 
 	public String getTitle() {
-		return title;
+		return taskTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitle(String taskTitle) {
+		this.taskTitle = taskTitle;
 	}
 
 	public String getTaskDescription() {
@@ -65,9 +68,17 @@ public class Task {
 		this.dateTimeAdded = dateTimeAdded;
 	}
 
+	public int getTaskEnabled() {
+		return taskEnabled;
+	}
+
+	public void setTaskEnabled(int taskEnabled) {
+		this.taskEnabled = taskEnabled;
+	}
+
 	@Override
 	public String toString() {
-		return "Task [id=" + id + ", title=" + title + ", taskDescription=" + taskDescription + ", dateTimeAdded="
+		return "Task [id=" + taskId + ", title=" + taskTitle + ", taskDescription=" + taskDescription + ", dateTimeAdded="
 				+ dateTimeAdded + "]";
 	}
 	
