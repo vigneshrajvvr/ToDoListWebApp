@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS todolist;
 CREATE DATABASE todolist; 
 USE todolist;
 DROP TABLE IF EXISTS user;
@@ -5,7 +6,8 @@ CREATE TABLE user (
 	user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
+    enabled TINYINT(1)
 );
 
 DROP TABLE IF EXISTS task;
@@ -14,6 +16,7 @@ CREATE TABLE task (
     task_title VARCHAR(50) NOT NULL,
     task_description VARCHAR(500),
     date_time_added DATETIME NOT NULL,
+    task_enabled TINYINT,
     user_task_id INT NOT NULL,
     FOREIGN KEY (user_task_id) REFERENCES user(user_id)
 );
