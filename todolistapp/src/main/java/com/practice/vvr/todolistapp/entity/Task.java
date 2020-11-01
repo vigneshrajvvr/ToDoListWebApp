@@ -1,5 +1,9 @@
 package com.practice.vvr.todolistapp.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// Task entity
 @Entity
 @Table(name="task")
 public class Task {
@@ -23,12 +28,16 @@ public class Task {
 	private String taskDescription;
 	
 	@Column(name="date_time_added")
-	private String dateTimeAdded;
+	private Date dateTimeAdded;
 	
 	@Column(name="task_enabled")
 	private int taskEnabled;
+	
+	public Task() {
+		// default constructor
+	}
 
-	public Task(int taskId, String taskTitle, String taskDescription, String dateTimeAdded) {
+	public Task(int taskId, String taskTitle, String taskDescription, Date dateTimeAdded) {
 		super();
 		this.taskId = taskId;
 		this.taskTitle = taskTitle;
@@ -60,12 +69,18 @@ public class Task {
 		this.taskDescription = taskDescription;
 	}
 
-	public String getDateTimeAdded() {
+	public Date getDateTimeAdded() {
 		return dateTimeAdded;
 	}
 
-	public void setDateTimeAdded(String dateTimeAdded) {
-		this.dateTimeAdded = dateTimeAdded;
+	public void setDateTimeAdded() throws ParseException {
+		
+		// to store current date whenever a new task is created
+		Date date = new Date();
+		
+		SimpleDateFormat ft = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+		
+		this.dateTimeAdded = ft.parse(ft.format(date));
 	}
 
 	public int getTaskEnabled() {
