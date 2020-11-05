@@ -18,6 +18,24 @@
 
 		<hr>
 
+		<table>
+			<thead>	
+				<tr>
+					<th></th>
+					<th>Title</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="tempTask : ${tasks}">
+					<td th:text="${tempTask.Title}"></td>
+					<td th:text="${tempTask.Description}"</td>
+				</tr>
+			</tbody>
+
+		</table>
+
 	</div>	
 
 </body>
