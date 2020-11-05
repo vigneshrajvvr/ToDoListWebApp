@@ -53,11 +53,11 @@ public class Task {
 		this.taskId = taskId;
 	}
 
-	public String getTitle() {
+	public String getTaskTitle() {
 		return taskTitle;
 	}
 
-	public void setTitle(String taskTitle) {
+	public void setTaskTitle(String taskTitle) {
 		this.taskTitle = taskTitle;
 	}
 
