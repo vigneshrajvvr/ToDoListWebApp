@@ -27,11 +27,7 @@ public class TaskController {
 		
 		List<Task> allTasks = taskService.getTasks();
 		
-		if(allTasks == null) {
-			System.out.println("No tasks found");
-		}
-		
-		taskModel.addAttribute("tasks", taskModel);
+		taskModel.addAttribute("tasks", allTasks);
 		
 		return "listtasks";
 		
