@@ -22,6 +22,7 @@ public class TaskController {
 //		this.taskService = taskService;
 //	}
 	
+	// To add controller to view all the tasks
 	@GetMapping("/list")
 	public String getTasks(Model taskModel) {
 		

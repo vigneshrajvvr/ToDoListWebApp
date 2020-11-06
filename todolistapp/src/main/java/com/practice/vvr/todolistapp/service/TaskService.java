@@ -11,6 +11,7 @@ import com.practice.vvr.todolistapp.entity.Task;
 @Service
 public class TaskService {
 	
+	// To get all the tasks
 	@Autowired
 	private TaskRepository taskRepository;
 	
