@@ -10,6 +10,9 @@ CREATE TABLE user (
     enabled TINYINT(1)
 );
 
+INSERT INTO user(user_id,username,password,email,enabled) VALUES (
+	1,'test','test','test@test.com',1);
+
 DROP TABLE IF EXISTS task;
 CREATE TABLE task (
 	task_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -21,11 +24,17 @@ CREATE TABLE task (
     FOREIGN KEY (user_task_id) REFERENCES user(user_id)
 );
 
+INSERT INTO task(task_id,task_title,task_description,date_time_added,task_enabled,user_task_id) VALUES(
+	1,'Test Task','To test database connection and appplication flow',NOW(),1,1);
+
 DROP TABLE IF EXISTS role;
 CREATE TABLE role (
 	role_id INT AUTO_INCREMENT PRIMARY KEY,
     role VARCHAR(50) NOT NULL
 );
+
+INSERT INTO role(role_id,role) VALUES(
+	1, 'USER');
 
 DROP TABLE IF EXISTS user_role;
 CREATE TABLE user_role (
@@ -34,3 +43,6 @@ CREATE TABLE user_role (
     FOREIGN KEY (user_id) REFERENCES user(user_id),
     FOREIGN KEY (role_id) REFERENCES role(role_id)
 );
+
+INSERT INTO user_role(user_id,role_id) VALUES(
+	1,1);
