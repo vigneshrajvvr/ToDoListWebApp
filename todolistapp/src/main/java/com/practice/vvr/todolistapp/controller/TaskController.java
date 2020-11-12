@@ -2,6 +2,7 @@ package com.practice.vvr.todolistapp.controller;
 
 import java.util.List;
 
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ import com.practice.vvr.todolistapp.service.TaskService;
 @Controller
 @RequestMapping("/task")
 public class TaskController {
+	
+	private static final Logger taskLogger = Logger.getLogger(TaskController.class.getName());
 	
 	@Autowired
 	private TaskService taskService;
@@ -31,6 +34,20 @@ public class TaskController {
 		taskModel.addAttribute("tasks", allTasks);
 		
 		return "listtasks";
+		
+	}
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model taskModel) {
+		
+		// Model attribute to bind form data
+		Task newTask = new Task();
+		
+		taskLogger.info("new task object created");
+		
+		taskModel.addAttribute("newTask", newTask);
+		
+		return "add-task";
 		
 	}
 
