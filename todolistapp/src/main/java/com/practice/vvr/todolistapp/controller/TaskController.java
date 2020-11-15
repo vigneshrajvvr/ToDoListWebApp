@@ -1,5 +1,6 @@
 package com.practice.vvr.todolistapp.controller;
 
+import java.text.ParseException;
 import java.util.List;
 
 import org.jboss.logging.Logger;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.practice.vvr.todolistapp.entity.Task;
@@ -48,6 +51,21 @@ public class TaskController {
 		taskModel.addAttribute("newTask", newTask);
 		
 		return "add-task";
+		
+	}
+	
+	@PostMapping("/processTaskForm")
+	public String processTaskForm(@ModelAttribute("newTask") Task newTask) throws ParseException {
+		
+		newTask.setDateTimeAdded();
+		
+		newTask.setTaskEnabled(1);
+		
+		newTask.setUserTaskId(1);
+		
+		taskService.saveTask(newTask);
+		
+		return "redirect:/task/list";
 		
 	}
 

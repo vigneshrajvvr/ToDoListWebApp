@@ -33,6 +33,9 @@ public class Task {
 	@Column(name="task_enabled")
 	private int taskEnabled;
 	
+	@Column(name="user_task_id")
+	private int userTaskId;
+	
 	public Task() {
 		// default constructor
 	}
@@ -89,6 +92,14 @@ public class Task {
 
 	public void setTaskEnabled(int taskEnabled) {
 		this.taskEnabled = taskEnabled;
+	}
+
+	public int getUserTaskId() {
+		return userTaskId;
+	}
+
+	public void setUserTaskId(int userTaskId) {
+		this.userTaskId = userTaskId;
 	}
 
 	@Override
