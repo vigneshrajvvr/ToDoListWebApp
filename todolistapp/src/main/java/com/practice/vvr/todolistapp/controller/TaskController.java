@@ -45,9 +45,7 @@ public class TaskController {
 		
 		// Model attribute to bind form data
 		Task newTask = new Task();
-		
-		taskLogger.info("new task object created");
-		
+				
 		taskModel.addAttribute("newTask", newTask);
 		
 		return "add-task";
