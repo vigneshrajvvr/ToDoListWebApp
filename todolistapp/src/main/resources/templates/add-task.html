@@ -19,6 +19,9 @@
 	<p class="h4 mb-4">Save Task</p>
 		
     <form action="#" th:action="@{/task/processTaskForm}" th:object="${newTask}" method="POST">
+    
+    	<!-- Hidden form field to handle update -->
+		<input type="hidden" th:field="*{taskId}">
 
         <input type="text" th:field="*{taskTitle}" class="form-control mb-4 col-4" placeholder="Title">
 

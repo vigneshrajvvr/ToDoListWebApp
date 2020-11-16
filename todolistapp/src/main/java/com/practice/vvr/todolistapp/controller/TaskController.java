@@ -61,11 +61,23 @@ public class TaskController {
 		
 		newTask.setTaskEnabled(1);
 		
+		// For temporary purpose
 		newTask.setUserTaskId(1);
 		
 		taskService.saveTask(newTask);
 		
 		return "redirect:/task/list";
+		
+	}
+	
+	@GetMapping("/formForUpdate")
+	public String formForUpdate(@ModelAttribute("taskId") int taskId, Model newTask) {
+		
+		Task tempTask = taskService.findById(taskId);  
+		
+		newTask.addAttribute("newTask", tempTask);
+		
+		return "add-task";
 		
 	}
 

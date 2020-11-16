@@ -48,11 +48,11 @@ public class Task {
 		this.dateTimeAdded = dateTimeAdded;
 	}
 
-	public int getId() {
+	public int getTaskId() {
 		return taskId;
 	}
 
-	public void setId(int taskId) {
+	public void setTaskId(int taskId) {
 		this.taskId = taskId;
 	}
 

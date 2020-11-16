@@ -33,6 +33,10 @@
 				<tr th:each="tempTask : ${tasks}">
 					<td th:text="${tempTask.taskTitle}"></td>
 					<td th:text="${tempTask.taskDescription}"></td>
+					<!-- Update link -->
+					<td>
+						<a th:href="@{/task/formForUpdate(taskId=${tempTask.taskId})}" class="btn btn-info btn-sm">Update</a>
+					</td>
 				</tr>
 			</tbody>
 
