@@ -46,5 +46,11 @@ public class TaskService {
 		
 		return tempTask;
 	}
+	
+	public void deleteTask(int taskId) {
+		
+		taskRepository.deleteById(taskId);
+		
+	}
 
 }

@@ -36,6 +36,8 @@
 					<!-- Update link -->
 					<td>
 						<a th:href="@{/task/formForUpdate(taskId=${tempTask.taskId})}" class="btn btn-info btn-sm">Update</a>
+						<a th:href="@{/task/deleteTask(taskId=${tempTask.taskId})}" class="btn btn-info btn-sm"
+							onclick="if(!(confirm('Do you want to delete the task?'))) return false">Delete</a>
 					</td>
 				</tr>
 			</tbody>

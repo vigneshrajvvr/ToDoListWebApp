@@ -78,5 +78,13 @@ public class TaskController {
 		return "add-task";
 		
 	}
+	
+	@GetMapping("/deleteTask")
+	public String deleteTask(@ModelAttribute("taskId") int taskId) {
+		
+		taskService.deleteTask(taskId);
+		
+		return "redirect:/task/list";
+	}
 
 }
