@@ -52,5 +52,11 @@ public class TaskService {
 		taskRepository.deleteById(taskId);
 		
 	}
+	
+	public List<Task> findByOrderByDateTimeAdded() {
+		
+		return taskRepository.findByOrderByDateTimeAddedDesc();
+		
+	}
 
 }

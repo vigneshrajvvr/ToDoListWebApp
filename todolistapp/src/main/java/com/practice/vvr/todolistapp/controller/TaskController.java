@@ -32,7 +32,7 @@ public class TaskController {
 	@GetMapping("/list")
 	public String getTasks(Model taskModel) {
 		
-		List<Task> allTasks = taskService.getTasks();
+		List<Task> allTasks = taskService.findByOrderByDateTimeAdded();
 		
 		taskModel.addAttribute("tasks", allTasks);
 		
