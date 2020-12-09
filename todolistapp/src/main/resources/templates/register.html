@@ -1,0 +1,28 @@
+<! DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Register</title>
+		
+		<!-- Required meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    	<!-- Bootstrap CSS -->
+   		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	</head>
+	
+	<body>
+	
+		Glad you are here!
+		
+		<form action="#" th:action="@{/app/processUserForm}" th:object="${theUser}" method="POST">
+		
+			<input type="text" th:field="${username}" placeholder="username">
+			
+			<input type="password" th:field="${password}" placeholder="password">
+			
+		</form>
+		
+	</body>
+	
+</html>
