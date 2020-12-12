@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.practice.vvr.todolistapp.entity.User;
+import com.practice.vvr.todolistapp.entity.TempUser;
 
 @Controller
 @RequestMapping("/app")
@@ -14,9 +14,9 @@ public class UserController {
 	@GetMapping("/register")
 	public String registrationForm(Model userModel) {
 		
-		User theUser = new User();
+		TempUser theTempUser = new TempUser();
 		
-		userModel.addAttribute("theUser", theUser);
+		userModel.addAttribute("theTempUser", theTempUser); 
 		
 		return "register";
 		

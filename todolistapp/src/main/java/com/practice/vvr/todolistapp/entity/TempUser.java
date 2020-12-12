@@ -1,43 +1,36 @@
 package com.practice.vvr.todolistapp.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-//User entity
-@Entity
-@Table(name="user") 
-public class User {
+/*
+* This is temporary user to validate given
+* inputs from the controller
+*/
+public class TempUser {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="user_id")
 	private int userId;
 	
-	@Column(name="username")
 	private String username;
 	
-	@Column(name="password")
 	private String password;
 	
-	@Column(name="email")
+	private String confirmPassword;
+	
 	private String email;
 	
-	@Column(name="enabled")
 	private int enabled;
 	
-	public User() {
+	public TempUser() {
 		
 	}
 
-	public User(int userId, String username, String password, String email, int enabled) {
-		super();
+	public TempUser(int userId, String username, String password, String confirmPassword, String email, int enabled) {
 		this.userId = userId;
 		this.username = username;
 		this.password = password;
+		this.confirmPassword = confirmPassword;
 		this.email = email;
 		this.enabled = enabled;
 	}
@@ -80,6 +73,14 @@ public class User {
 
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 }
