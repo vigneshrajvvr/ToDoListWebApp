@@ -13,14 +13,19 @@
 	
 	<body>
 	
-	
 		Glad you are here!
 		
-		<form action="#" th:action="@{/app/processUserForm}" th:object="${theUser}" method="POST">
+		<form action="#" th:action="@{/app/processUserForm}" th:object="${theTempUser}" method="POST">
 		
-			<input type="text" th:field="${username}" placeholder="username">
+			<input type="text" th:field="${theTempUser.username}" placeholder="Username">
 			
-			<input type="password" th:field="${password}" placeholder="password">
+			<input type="password" th:field="${theTempUser.password}" placeholder="Password">
+			
+			<input type="password" th:field="${theTempUser.confirmPassword}" placeholder="Confirm Password">
+			
+			<input type="email" th:field="${theTempUser.email}" placeholder="Email">
+			
+			<input type="submit" name="Submit">
 			
 		</form>
 		
