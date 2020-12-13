@@ -1,9 +1,8 @@
 package com.practice.vvr.todolistapp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Email;
 /*
 * This is temporary user to validate given
 * inputs from the controller
@@ -12,10 +11,13 @@ public class TempUser {
 	
 	private int userId;
 	
+	@NotNull(message="Username should not be empty")
 	private String username;
 	
+	@NotNull(message="Password field cannot be empty")
 	private String password;
 	
+	@NotNull(message="Confirm Password field cannot be empty")
 	private String confirmPassword;
 	
 	private String email;
