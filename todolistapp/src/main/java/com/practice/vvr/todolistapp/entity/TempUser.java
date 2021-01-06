@@ -2,7 +2,7 @@ package com.practice.vvr.todolistapp.entity;
 
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 /*
 * This is temporary user to validate given
 * inputs from the controller
@@ -12,14 +12,19 @@ public class TempUser {
 	private int userId;
 	
 	@NotNull(message="Username should not be empty")
+	@Length(min = 1, message = "Minimum value should be 1")
 	private String username;
 	
 	@NotNull(message="Password field cannot be empty")
+	@Length(min = 1, message = "Minimum value should be 1")
 	private String password;
 	
 	@NotNull(message="Confirm Password field cannot be empty")
+	@Length(min = 1, message = "Minimum value should be 1")
 	private String confirmPassword;
 	
+	@NotNull(message="Email field cannot be empty")
+	@Length(min = 1, message = "Minimum value should be 1")
 	private String email;
 	
 	private int enabled;
