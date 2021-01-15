@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.practice.vvr.todolistapp.entity.TempUser;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/app") 
 public class UserController {
 	
 	@GetMapping("/register")
