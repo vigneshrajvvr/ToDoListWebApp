@@ -29,7 +29,7 @@ public class UserController {
 	
 	@PostMapping("/processUserForm")
 	public String processRegistrationForm(@Valid @ModelAttribute("theTempUser") TempUser tempUserModel,
-			                              BindingResult bindingResult, Model theModel) {
+			                              BindingResult bindingResult) {
 		
 		if(bindingResult.hasErrors()) {
 			return "register";

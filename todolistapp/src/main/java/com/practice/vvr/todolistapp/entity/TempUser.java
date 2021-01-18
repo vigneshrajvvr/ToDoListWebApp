@@ -1,6 +1,7 @@
 package com.practice.vvr.todolistapp.entity;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 /*
@@ -11,8 +12,7 @@ public class TempUser {
 	
 	private int userId;
 	
-	@NotNull(message="Username should not be empty")
-	@Length(min = 1, message = "Minimum value should be 1")
+	@Size(min = 3, message = "Size should be between 8 - 13 characters")
 	private String username;
 	
 	@NotNull(message="Password field cannot be empty")

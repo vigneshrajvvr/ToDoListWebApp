@@ -17,13 +17,19 @@
 		
 		<form action="#" th:action="@{/app/processUserForm}" th:object="${theTempUser}" method="POST">
 		
-			<input type="text" th:field="${theTempUser.username}" placeholder="Username"><br>
+		<div class="float">
+			<input type="text" th:field="${theTempUser.username}" placeholder="Username">
+			<div th:if="${#fields.hasErrors('username')}" th:errors="${theTempUser.username}"></div><br>
+		</div>
+						
+			<input type="password" th:field="${theTempUser.password}" placeholder="Password">
+			<div th:if="${#fields.hasErrors('password')}" th:errors="${theTempUser.password}"></div><br>
 			
-			<input type="password" th:field="${theTempUser.password}" placeholder="Password"><br>
+			<input type="password" th:field="${theTempUser.confirmPassword}" placeholder="Confirm Password">
+			<div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="${theTempUser.confirmPassword}"></div><br>
 			
-			<input type="password" th:field="${theTempUser.confirmPassword}" placeholder="Confirm Password"><br>
-			
-			<input type="email" th:field="${theTempUser.email}" placeholder="Email"><br>
+			<input type="email" th:field="${theTempUser.email}" placeholder="Email">
+			<div th:if="${#fields.hasErrors('email')}" th:errors="${theTempUser.email}"></div><br>
 			
 			<input type="submit" name="Submit">
 			
