@@ -12,19 +12,16 @@ public class TempUser {
 	
 	private int userId;
 	
-	@Size(min = 3, message = "Size should be between 8 - 13 characters")
+	@Size(min = 3, max = 8, message = "Username should be between 8 - 13 characters")
 	private String username;
 	
-	@NotNull(message="Password field cannot be empty")
-	@Length(min = 1, message = "Minimum value should be 1")
+	@Length(min = 3, max = 8, message = "Password should be between 8 - 13 characters")
 	private String password;
-	
-	@NotNull(message="Confirm Password field cannot be empty")
-	@Length(min = 1, message = "Minimum value should be 1")
+
+	@Length(min = 3, max = 8, message = "Confirm password should be between 8 - 13 characters")
 	private String confirmPassword;
 	
-	@NotNull(message="Email field cannot be empty")
-	@Length(min = 1, message = "Minimum value should be 1")
+	@Length(min = 1, message = "Email should be between 8 - 13 characters")
 	private String email;
 	
 	private int enabled;
