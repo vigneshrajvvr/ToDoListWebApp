@@ -1,6 +1,5 @@
 package com.practice.vvr.todolistapp.entity;
 
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
@@ -8,6 +7,7 @@ import org.hibernate.validator.constraints.Length;
 * This is temporary user to validate given
 * inputs from the controller
 */
+
 public class TempUser {
 	
 	private int userId;
