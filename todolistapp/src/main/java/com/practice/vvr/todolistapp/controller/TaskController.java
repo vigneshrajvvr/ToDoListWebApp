@@ -19,7 +19,7 @@ import com.practice.vvr.todolistapp.service.TaskService;
 @RequestMapping("/task")
 public class TaskController {
 	
-	private static final Logger taskLogger = Logger.getLogger(TaskController.class.getName());
+	private static final Logger TASKLOGGER = Logger.getLogger(TaskController.class.getName());
 	
 	@Autowired
 	private TaskService taskService;

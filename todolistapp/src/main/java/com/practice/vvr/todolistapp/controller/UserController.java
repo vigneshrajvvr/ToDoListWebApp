@@ -38,8 +38,7 @@ public class UserController {
 		if(!tempUserModel.getPassword().equals(tempUserModel.getConfirmPassword())) {
 			return "register"; 
 		}
-		
-		
+
 		return "register";
 	}
 	
